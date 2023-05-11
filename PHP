@@ -1,0 +1,41 @@
+<?php
+class Auto {
+    public $razotajs;
+    public $modelis;
+    private $gads;
+    private $numuraZime;
+
+    public function __construct($razotajs, $modelis, $gads, $numuraZime) {
+        $this->razotajs = $razotajs;
+        $this->modelis = $modelis;
+        $this->gads = $gads;
+        $this->numuraZime = $numuraZime;
+    }
+
+    public function getGads() {
+        return $this->gads;
+    }
+
+    public function setGads($gads) {
+        $this->gads = $gads;
+    }
+
+    public function getNumuraZime() {
+        return $this->numuraZime;
+    }
+
+    public function getInfo() {
+        return "Auto: " . $this->razotajs . " " . $this->modelis . ", " . $this->getGads() . ". gads, numura zīme: " . $this->getNumuraZime();
+    }
+
+    public function addFeatures($garums, $platums) {
+        $this->garums = $garums;
+        $this->platums = $platums;
+        return "Pievienotas jaunas īpašības. Auto garums: " . $this->garums . " m, platums: " . $this->platums . " m";
+    }
+}
+
+$auto = new Auto("Audi", "A2", "2010", "SB-33");
+echo "Pirms funkcijas izsaukšanas: " . $auto->getInfo() . "\n";
+echo $auto->addFeatures("4.05", "1.75") . "\n";
+echo "Pēc funkcijas izsaukšanas: " . $auto->getInfo() . "\n";
