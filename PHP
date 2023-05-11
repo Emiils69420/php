@@ -36,6 +36,10 @@ class Auto {
 }
 
 $auto = new Auto("Audi", "A2", "2010", "SB-33");
-echo "Pirms funkcijas izsaukšanas: " . $auto->getInfo() . "\n";
+$auto2 = new auto("BMW", "E36", "1999", "DR-77");
+$auto3 = new auto("VW", "Touran", "2007", "KA-69");
+echo $auto->getInfo() . "\n";
+echo $auto2->getInfo() . "\n";
+echo $auto3->getInfo() . "\n";
 echo $auto->addFeatures("4.05", "1.75") . "\n";
 echo "Pēc funkcijas izsaukšanas: " . $auto->getInfo() . "\n";
